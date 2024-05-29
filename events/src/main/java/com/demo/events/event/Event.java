@@ -11,7 +11,7 @@ public record Event(
         LocalDateTime startingAt,
         LocalDateTime finishesAt,
         String description,
-        Type type
+        Location location
 ) {
     // Possible to add validation here!
 }

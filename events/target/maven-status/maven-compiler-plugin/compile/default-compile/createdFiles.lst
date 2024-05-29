@@ -1,0 +1,6 @@
+com/demo/events/EventsApplication.class
+com/demo/events/event/Event.class
+com/demo/events/event/EventRepository.class
+com/demo/events/event/EventController.class
+com/demo/events/event/Type.class
+com/demo/events/event/RunNotFoundExtension.class

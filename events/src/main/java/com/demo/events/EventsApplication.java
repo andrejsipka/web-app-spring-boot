@@ -1,7 +1,8 @@
 package com.demo.events;
 
 import com.demo.events.event.Event;
-import com.demo.events.event.Type;
+import com.demo.events.event.EventRepository;
+import com.demo.events.event.Location;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -21,11 +22,10 @@ public class EventsApplication {
 	}
 
 	@Bean
-	CommandLineRunner events() {
+	CommandLineRunner event(EventRepository eventRepository) {
 		return args -> {
-			Event event = new Event(1, "At Work", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), "Exchanging time for money", Type.PRIVATE);
-
-			log.info("Event " + event);
+			Event event = new Event(1, "At Work", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), "Exchanging time for money", Location.PRIVATE);
+			eventRepository.create(event);
 		};
 	}
 }

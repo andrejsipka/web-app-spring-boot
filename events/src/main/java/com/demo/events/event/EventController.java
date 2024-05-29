@@ -28,7 +28,7 @@ public class EventController {
     public Event event(@PathVariable Integer id) {
         Optional<Event> event = eventRepository.findById(id);
 
-        if(event.isEmpty()) {
+        if (event.isEmpty()) {
             throw new RunNotFoundExtension();
         }
 
